@@ -1,92 +1,140 @@
-*  
-    Projeto: Beauty Makeup  
-    Autora: Anna Karolyna – 2B  
-    Estilo visual inspirado em tons suaves e femininos  
+/* 
+  Projeto: Beauty Makeup
+  Autora: Anna Karolyna – 2B
+  Estilo: Clean, responsivo, cores suaves.
 */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
 body {
-    background: #ffeef6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #fff7fb 0%, #ffeef6 100%);
+  color: #222;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Cabeçalho */
-.cabecalho {
-    text-align: center;
-    padding: 40px 0;
-    background: #ffcae6;
-    color: #5a0035;
+/* Layout container */
+.container { width: min(1100px, 94%); margin: 0 auto; }
+
+/* Header */
+.site-header {
+  background: #ffcae6;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.header-inner {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+.brand { font-size: 1.6rem; color: #5a0035; }
+.tagline { color: #5a0035; opacity: .85; font-size: .95rem; }
+
+/* Cart button */
+.cart-area button {
+  background: transparent;
+  border: 2px solid #ff6fae;
+  color: #5a0035;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cart-area button:focus { outline: 3px solid rgba(255,111,174,.25); }
+
+/* Produtos grid */
+#produtos-section { padding: 28px 0 60px; }
+#produtos-section h2 { color:#7a0050; margin-bottom: 18px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 18px;
 }
 
-.cabecalho h1 {
-    font-size: 40px;
-    margin-bottom: 5px;
-}
-
-.cabecalho p {
-    font-size: 18px;
-}
-
-/* Área dos produtos */
-.produtos {
-    padding: 40px;
-    text-align: center;
-}
-
-.produtos h2 {
-    font-size: 28px;
-    color: #7a0050;
-    margin-bottom: 25px;
-}
-
-/* Cards */
+/* Card */
 .card {
-    display: inline-block;
-    background: white;
-    width: 260px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform .2s;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(122,0,80,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-.card:hover {
-    transform: scale(1.05);
-}
-
 .card img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#f2d7e6,#ffe6f2);
+}
+.card h3 { color:#7a0050; font-size: 1.05rem; }
+.card p { color:#444; font-size:.95rem; flex: 1; }
+.card .price { font-weight: 700; color:#b3005a; }
+
+/* Buttons */
+.btn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary { background:#ff4b87; color: #fff; }
+.btn.secondary { background: transparent; border: 1px solid #ccc; color: #333; }
+.card .actions { display:flex; gap:8px; }
+
+/* Dialog (cart) */
+.dialog {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,10,10,0.45);
+  z-index: 1200;
+}
+.dialog-panel {
+  width: min(480px, 96%);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+.dialog-header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-bottom:1px solid #eee; }
+.dialog-header h3 { margin:0; color:#7a0050; }
+.dialog-header button { background:none;border:0;font-size:1.5rem;cursor:pointer; }
+.cart-items { max-height: 320px; overflow:auto; padding:12px 16px; }
+.cart-item { display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px dashed #f1f1f1; }
+.cart-item img { width:56px; height:56px; object-fit:cover; border-radius:8px; }
+.cart-item .meta { flex:1; }
+.cart-item .meta b { display:block; color:#5a0035; }
+.cart-item .meta small { color:#666; display:block; }
+.cart-item .actions { display:flex; gap:6px; }
+
+/* Dialog footer */
+.dialog-footer { padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px; border-top:1px solid #eee; }
+.total { font-weight:700; color:#b3005a; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #5a0035;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  z-index: 1300;
 }
 
-.card h3 {
-    margin: 10px 0;
-    color: #7a0050;
-}
+/* Footer */
+.site-footer { background: #ffcae6; padding: 14px 0; text-align:center; font-size:.95rem; color:#5a0035; }
 
-.card p {
-    color: #555;
-    font-size: 15px;
-}
-
-/* Botão */
-button {
-    background: #ff7ab8;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    transition: .3s;
-}
-
-button:hover {
-    background: #ff5da4;
+/* Responsive tweaks */
+@media (max-width:420px) {
+  .card img { height: 120px; }
+  .brand { font-size: 1.2rem; }
 }
