@@ -1,140 +1,66 @@
-/* 
-  Projeto: Beauty Makeup
-  Autora: Anna Karolyna – 2B
-  Estilo: Clean, responsivo, cores suaves.
-*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Reset simples */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { height: 100%; }
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg, #fff7fb 0%, #ffeef6 100%);
-  color: #222;
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
+    background: linear-gradient(#f9c5d1, #ffe6ec);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Layout container */
-.container { width: min(1100px, 94%); margin: 0 auto; }
-
-/* Header */
-.site-header {
-  background: #ffcae6;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-.header-inner {
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-}
-.brand { font-size: 1.6rem; color: #5a0035; }
-.tagline { color: #5a0035; opacity: .85; font-size: .95rem; }
-
-/* Cart button */
-.cart-area button {
-  background: transparent;
-  border: 2px solid #ff6fae;
-  color: #5a0035;
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.cart-area button:focus { outline: 3px solid rgba(255,111,174,.25); }
-
-/* Produtos grid */
-#produtos-section { padding: 28px 0 60px; }
-#produtos-section h2 { color:#7a0050; margin-bottom: 18px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 18px;
+.container {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px #d67b9f;
 }
 
-/* Card */
-.card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: 0 6px 18px rgba(122,0,80,0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  background: linear-gradient(90deg,#f2d7e6,#ffe6f2);
-}
-.card h3 { color:#7a0050; font-size: 1.05rem; }
-.card p { color:#444; font-size:.95rem; flex: 1; }
-.card .price { font-weight: 700; color:#b3005a; }
-
-/* Buttons */
-.btn {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-}
-.btn.primary { background:#ff4b87; color: #fff; }
-.btn.secondary { background: transparent; border: 1px solid #ccc; color: #333; }
-.card .actions { display:flex; gap:8px; }
-
-/* Dialog (cart) */
-.dialog {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(10,10,10,0.45);
-  z-index: 1200;
-}
-.dialog-panel {
-  width: min(480px, 96%);
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-.dialog-header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-bottom:1px solid #eee; }
-.dialog-header h3 { margin:0; color:#7a0050; }
-.dialog-header button { background:none;border:0;font-size:1.5rem;cursor:pointer; }
-.cart-items { max-height: 320px; overflow:auto; padding:12px 16px; }
-.cart-item { display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px dashed #f1f1f1; }
-.cart-item img { width:56px; height:56px; object-fit:cover; border-radius:8px; }
-.cart-item .meta { flex:1; }
-.cart-item .meta b { display:block; color:#5a0035; }
-.cart-item .meta small { color:#666; display:block; }
-.cart-item .actions { display:flex; gap:6px; }
-
-/* Dialog footer */
-.dialog-footer { padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px; border-top:1px solid #eee; }
-.total { font-weight:700; color:#b3005a; }
-
-/* Toast */
-.toast {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  background: #5a0035;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  z-index: 1300;
+h1 {
+    margin-bottom: 10px;
+    color: #d97aa8;
 }
 
-/* Footer */
-.site-footer { background: #ffcae6; padding: 14px 0; text-align:center; font-size:.95rem; color:#5a0035; }
+#quiz-container p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
-/* Responsive tweaks */
-@media (max-width:420px) {
-  .card img { height: 120px; }
-  .brand { font-size: 1.2rem; }
+.opcao-btn {
+    width: 100%;
+    background: #f5bfd8;
+    border: none;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcao-btn:hover {
+    background: #e497bc;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #d97aa8;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #bf5f90;
+}
+
+.hidden {
+    display: none;
 }
