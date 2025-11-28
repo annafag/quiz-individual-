@@ -1,1 +1,92 @@
+*  
+    Projeto: Beauty Makeup  
+    Autora: Anna Karolyna – 2B  
+    Estilo visual inspirado em tons suaves e femininos  
+*/
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ffeef6;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    text-align: center;
+    padding: 40px 0;
+    background: #ffcae6;
+    color: #5a0035;
+}
+
+.cabecalho h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.cabecalho p {
+    font-size: 18px;
+}
+
+/* Área dos produtos */
+.produtos {
+    padding: 40px;
+    text-align: center;
+}
+
+.produtos h2 {
+    font-size: 28px;
+    color: #7a0050;
+    margin-bottom: 25px;
+}
+
+/* Cards */
+.card {
+    display: inline-block;
+    background: white;
+    width: 260px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #7a0050;
+}
+
+.card p {
+    color: #555;
+    font-size: 15px;
+}
+
+/* Botão */
+button {
+    background: #ff7ab8;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #ff5da4;
+}
