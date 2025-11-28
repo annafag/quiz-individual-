@@ -1,70 +1,33 @@
-<!--
-  Projeto: Beauty Makeup
-  Autora: Anna Karolyna – 2B
-  Descrição: Página de produtos de maquiagem com carrinho simples (persistente com localStorage),
-  acessibilidade e layout responsivo.
--->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Beauty Makeup — Anna Karolyna (2B)</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Maquiagem - Anna Karolyna 2B</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand">Beauty Makeup</h1>
-        <p class="tagline">Realce sua beleza — Anna Karolyna · 2B</p>
-      </div>
 
-      <div class="cart-area">
-        <button id="open-cart" aria-haspopup="dialog" aria-controls="dialog-cart" aria-expanded="false">
-          Carrinho (<span id="cart-count">0</span>)
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section aria-label="Produtos em destaque" id="produtos-section">
-      <h2>Produtos em destaque</h2>
-      <div id="produtos" class="grid"></div>
-    </section>
-  </main>
-
-  <!-- Cart Dialog -->
-  <div id="dialog-cart" class="dialog" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
-    <div class="dialog-panel">
-      <header class="dialog-header">
-        <h3 id="cart-title">Seu Carrinho</h3>
-        <button id="close-cart" aria-label="Fechar carrinho">&times;</button>
-      </header>
-
-      <div id="cart-items" class="cart-items" aria-live="polite"></div>
-
-      <footer class="dialog-footer">
-        <div class="total">Total: R$ <span id="cart-total">0.00</span></div>
-        <div class="dialog-actions">
-          <button id="clear-cart" class="btn secondary">Limpar</button>
-          <button id="checkout" class="btn primary">Finalizar</button>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-  <!-- Toast / A11y live region -->
-  <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
-
-  <footer class="site-footer">
     <div class="container">
-      <p>Projeto desenvolvido por <strong>Anna Karolyna</strong> — Turma 2B</p>
-    </div>
-  </footer>
+        <h1>Quiz de Maquiagem</h1>
+        <h2>por Anna Karolyna - 2B</h2>
 
-  <script src="script.js" defer></script>
+        <div id="quiz-container">
+            <p id="pergunta"></p>
+
+            <div id="opcoes"></div>
+
+            <button id="proximo" onclick="proximaPergunta()">Próxima</button>
+        </div>
+
+        <div id="resultado" class="hidden">
+            <h2>Resultado Final</h2>
+            <p id="mensagemFinal"></p>
+            <button onclick="reiniciar()">Refazer Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
